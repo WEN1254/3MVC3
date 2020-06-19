@@ -1,0 +1,68 @@
+﻿<div class="content">
+    <div class="category_image ">
+
+        <div class="category_img w-100">
+            <img src="https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,q_auto/v1/media/catalog/tmp/category/WebM2_CategoryLandingPages_Marquees_Bedroom_Nov18.jpg"
+                 alt="" class="image w-100 ">
+        </div>
+        <div class="category_content">
+            <h4 class="text-center">New Bedroom Designs</h4>
+            <a href="#">
+                <img src="https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,q_auto/v1/media/wysiwyg/clp/WebM2_CategoryLandingPages_Sections_MeTime.jpg"
+                     alt="" class="image w-100">
+                <h6>ME TIME LEATHER BED</h6>
+            </a>
+            <a href="#">
+                <img src="https://res-2.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,q_auto/v1/media/wysiwyg/clp/CategoryLandingPage_040119_Bedding_Bedroom.jpg"
+                     alt="" class="image w-100">
+                <h6>BEDDING</h6>
+            </a>
+            <a href="#">
+                <img src="https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,q_auto/v1/media/wysiwyg/clp/WebM2_CategoryLandingPages_Sections_Hunker_1.jpg"
+                     alt="" class="image w-100">
+                <h6>HUNKER</h6>
+                <p>AVAILABLE IN KING AND QUEEN</p>
+            </a>
+        </div>
+
+    </div>
+    <div class="category_menu ">
+        <div class="category_menu_content">
+            <div class="home_link">
+                <a href="#">Home</a>
+                <span>| Modern Bedroom Furniture</span>
+            </div>
+            <h1>Chairs</h1>
+            <ul>
+                <li>
+                    @Html.ActionLink("Lounge Chairs", "Category", "ProductList", new { type = 3 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Ottomans And Stools", "Category", "ProductList", new { type = 4 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Benches", "Category", "ProductList", new { type = 5 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Kids-Chairs", "Category", "ProductList", new { type = 6 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section topCSS{
+
+    <link href="~/Assest/css/Introduction.css" rel="stylesheet" />
+    <style>
+        li a {
+            color: black;
+            text-decoration: none;
+        }
+
+            li a:hover {
+                color: black;
+                text-decoration: none;
+            }
+    </style>
+}

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "UserPage";
+}
+
+        <div>
+            <b-card no-body id="card">
+                <b-tabs card>
+                    <b-tab title="Tab 3">
+                        <div class="card card-user">
+                            <div class="card-header">
+                                <h5 class="card-title">Edit Profile</h5>
+                            </div>
+                            <div class="card-body" id="UserData">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6 px-1 ">
+                                            <div class="form-group">
+                                                <label>Email address</label>
+                                                <input type="email" class="form-control" placeholder="Email"
+                                                       v-model="UserData[0].Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 px-1 ">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" placeholder="Name"
+                                                       v-model="UserData[0].CustomerName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 px-1 ">
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="tel" class="form-control" placeholder="tel"
+                                                       v-model="UserData[0].Phone">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 px-1 ">
+                                            <div class="form-group">
+                                                <label>BirthDay</label>
+                                                <input type="date" class="form-control" v-model="UserData[0].BirthDay">
+                                            </div>
+                                        </div>
+                                        <div class="update ml-auto mr-auto">
+                                            <button type="submit" class="btn btn-primary btn-round">
+                                                Update
+                                                Profile
+                                            </button>
+                                            <button type="submit" class="btn btn-primary btn-round">
+                                                Replace
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </b-tab>
+                </b-tabs>
+            </b-card>
+        </div>
+

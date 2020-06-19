@@ -1,0 +1,49 @@
+* {
+    font-family: sans-serif;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #888;
+}
+
+.person {
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 50px;
+    transition: .5s;
+    padding: 15px;
+}
+
+    .person:hover {
+        background-color: #000;
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+.information {
+    text-align: left;
+}
+
+.person img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.row {
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.top-column {
+    display: flex;
+}
+
+.column-content {
+    text-align: center;
+}

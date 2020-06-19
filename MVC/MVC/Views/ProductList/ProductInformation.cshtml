@@ -1,0 +1,163 @@
+﻿@model IEnumerable<MVC.Models.Database.ProductSpecification>
+
+<div class="container">
+    <div class="row">
+        <div class="product_picture col-md-7 col-sm-12">
+            <img src="~/Assest/img/ProductImg/@Model.First().Image"
+                 alt="" class="w-100 ">
+        </div>
+        <div class="product col-md-5 col-sm-12">
+            <h2 class="pt-5">@Model.First().Product.ProductName</h2>
+            <h3>$@Model.First().Price</h3>
+            <br />
+            <p>COLOR</p>
+            <br />
+            <div class="color_cicle row justify-content-start ml-0">
+                @foreach (var item in Model)
+                {
+                    @*<p>@item.Colour</p>*@
+                    @*<li>@Html.ActionLink(item.Colour, "ProductInformation", new { id = item.ProductSpecificationID })</li>*@
+                    <div class="color_btn pt-0">
+                        <a href="~/ProductList/ProductInformation/@item.ProductSpecificationID" class="d-flex">
+                            <img src="~/Assest/img/ColourCicle/@Html.DisplayFor(modelItem => item.ColourImg)"
+                                 alt="圖片說明" class="card-img-top ">
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="row buy">
+                <button class="buynumber col-2">1</button>
+                <button class="buybutton col-5" onclick="AddToCart(' @Model.First().ProductSpecificationID')">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="information_block container col-12">
+    <div class="row">
+        <div class="col-2 col-sm-2 align-content-center">
+            DESCRIPTION
+        </div>
+        <div class="col-2 col-sm-2 align-content-center">
+            DIMENSIONS
+        </div>
+        <div class="col-2 col-sm-2 align-content-center">
+            PRODUCT DETAILS
+        </div>
+        <div class="col-2 col-sm-2 align-content-center">
+            SUGGESTED ITEMS
+        </div>
+        <div class="col-2 col-sm-2 align-content-center">
+            SHIPPING & RETURNS
+        </div>
+    </div>
+</div>
+<div class="wrapper col-12">
+    <h2 class="align-content-center">@Model.First().Product.DescriptionTitle</h2>
+    <p>
+        @Model.First().Product.ProductDescription
+    </p>
+</div>
+<div class="demo_picture col-12">
+    <img src="~/Assest/img/InformationImg/@Model.First().Product.LargePageImage" alt=""
+         class="w-100">
+</div>
+<div class="product_dimensions">
+    <h2>Product Dimensions</h2>
+    <img src="~/Assest/img/InformationImg/@Model.First().Product.DesignDiagramImage" alt=""
+         class="w-100">
+</div>
+<div class="product_details">
+    <div class="product_details_title w-100">
+        <h2>Product Details</h2>
+    </div>
+    <div class="materials">
+        <p>
+            @Model.First().Product.Particular
+        </p>
+    </div>
+    <div class="row product_details_a">
+        <div class="col-4 ">
+            PRINT PRODUCT INFO
+        </div>
+        <div class="col-4 ">
+            ASSEMBLY + CARE
+        </div>
+        <div class="col-4 r">
+            DOWNLOAD FILES
+        </div>
+    </div>
+</div>
+<div class="interest_you">
+    <div class="interest_you_title w-100">
+        <h2>This Might Interest You</h2>
+    </div>
+    <div class="row interest_you_card">
+        <div class="col-4">
+            <img src="https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_405,q_auto,w_405/v1/media/catalog/product/c/t/ct1_deskwl_pg_3_4_cant-desk-walnut-grey_11_1.jpg"
+                 alt="" class="w-100">
+            <p>CANT DESK</p>
+            <P>$799.00</P>
+        </div>
+        <div class="col-4">
+            <img src="https://res-1.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_405,q_auto,w_405/v1/media/catalog/product/m/i/minimalista-console-table-black-black-mirror-front_1.jpg"
+                 alt="" class="w-100">
+            <p>MINIMALISTA CONSOLE TABLE/p>
+            <P>$549.00 - $699.00</P>
+        </div>
+        <div class="col-4">
+            <img src="https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_405,q_auto,w_405/v1/media/catalog/product/s/r/sr1_medtbl_sk_swept-medium-dining-table-smoke-on-ash_2.jpg"
+                 alt="" class="w-100">
+            <p>STRUT MEDIUM WOOD TABLE</p>
+            <P>$1.199.00 - $1.299.00</P>
+        </div>
+    </div>
+    <div class="shopping_notice">
+        <div class="row shopping_notice_card">
+            <div class="shipping col-6">
+                <h3>Shipping</h3>
+                <p>Standard Shipping rates are 7% of your merchandise total.</p>
+                <p>
+                    Large items are shipped via common carrier (a freight company). You will be contacted one to two
+                    days in advance to schedule a Monday through Friday delivery appointment.
+                </p>
+                <p>Please note, delivery drivers do not walk dogs, cook meals or take off their shirts.</p>
+            </div>
+            <div class="return col-6">
+                <h3>Returns</h3>
+                <p>
+                    Thrilled. Delighted. Satisfied. This is how we want you to feel about your Blu Dot purchase. If
+                    you aren't happy with your purchase, notify us within 10 days of receipt, and we will take it
+                    back for a full refund or help you find a suitable replacement.
+                </p>
+                <p>
+                    If something arrives damaged or defective, let us know and we will make arrangements for a
+                    replacement or refund if necessary.
+                </p>
+                <p>
+                    Please note that original delivery fees are non-refundable and additional shipping fees may
+                    apply.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section topCSS{
+
+
+
+    <link href="~/Assest/css/ProductInformation.css" rel="stylesheet" />
+    <style type="text/css">
+    </style>
+}
+@section endJS{
+
+    <script type="text/javascript">
+
+
+
+
+    </script>
+}

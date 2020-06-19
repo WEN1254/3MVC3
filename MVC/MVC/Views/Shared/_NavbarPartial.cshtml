@@ -1,0 +1,217 @@
+﻿@model MVC.Models.Database.Customer
+@using MVC.Models
+
+@section topCSS{
+    
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a class="navbar-brand col-1" href="~/Home/Index">
+        <img src="~/Assest/img/下載.png" alt="">
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="col-11 collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto  ml-auto col-9">
+            <li class="nav-item active">
+                <a class="nav-link new" href="~/ProductList/New">New <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="~/ProductList/Bestsellers">Bestsellers<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active drop-down-menu">
+                <a class="nav-link active" href="~/SofasIntroduction/Index">Sofas<span class="sr-only">(current)</span></a>
+                <ul class="hidden">
+                    <li>
+                        @Html.ActionLink("Sofas And Sleeper", "Category", "ProductList", new { type = 1 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Sectional Sofas", "Category", "ProductList", new { type = 2 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active drop-down-menu">
+                <a class="nav-link active" href="~/ChairsIntroduction/Index">Chairs<span class="sr-only">(current)</span></a>
+                <ul class="hidden">
+                    <li>
+                        @Html.ActionLink("Lounge Chairs", "Category", "ProductList", new { type = 3 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Ottomans And Stools", "Category", "ProductList", new { type = 4 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Benches", "Category", "ProductList", new { type = 5 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Kids-Chairs", "Category", "ProductList", new { type = 6 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active drop-down-menu">
+                <a class="nav-link active" href="~/TablesIntroduction/Index">Tables<span class="sr-only">(current)</span></a>
+                <ul class="hidden">
+                    <li>
+                        @Html.ActionLink("Accent And Coffee Tables", "Category", "ProductList", new { type = 7 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Office-Desks And Tables", "Category", "ProductList", new { type = 8 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Kids-Desk", "Category", "ProductList", new { type = 9 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active drop-down-menu">
+                <a class="nav-link active" href="~/BedsIntroduction/Index">Beds<span class="sr-only">(current)</span></a>
+                <ul class="hidden">
+                    <li>
+                        @Html.ActionLink("Bedroom-Beds", "Category", "ProductList", new { type = 10 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Kids-Beds", "Category", "ProductList", new { type = 11 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active drop-down-menu">
+                <a class="nav-link active" href="~/CabinetAndDressingtableIntroduction/Index">Cabinet And Dressingtable<span class="sr-only">(current)</span></a>
+                <ul class="hidden">
+                    <li>
+                        @Html.ActionLink("Dressers", "Category", "ProductList", new { type = 12 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Bookcases", "Category", "ProductList", new { type = 13 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active drop-down-menu">
+                <a class="nav-link active" href="~/AccessoriesIntroduction/Index">Accessories<span class="sr-only">(current)</span></a>
+                <ul class="hidden">
+                    <li>
+                        @Html.ActionLink("Rugs", "Category", "ProductList", new { type = 14 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Pillows And Cushionss", "Category", "ProductList", new { type = 15 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Mirrors", "Category", "ProductList", new { type = 16 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Bedding", "Category", "ProductList", new { type = 17 }, new { sortOrder = ViewBag.ResetParm })
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active">
+                @Html.ActionLink("Lighting", "Category", "ProductList", new { type = 18 }, new { @class = "nav-link" })<span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="~/AboutUs/Index">About<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <div class="nav_icon "id="UserType">
+            <a id="loginBtn"><i class="fas fa-user"></i></a>
+            <a href="" class="search"><i class="fas fa-search"></i></a>
+            <button id="btn" for="check" onclick="shop()">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <input type="checkbox" id="check">
+
+
+
+            <div class="transparent">
+
+            </div>
+            <div class="shop" id="shop">
+
+                <button id="close" type="button" class="close" aria-label="Close" onclick="shop()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="Cart">
+                    @Html.Partial("_CartPartial")
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</nav>
+
+<div class="modal fade" id="RegisterModel" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <img src="~/Assest/img/下載.png" alt="">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="account">
+                    <input class="mx-auto" type="text" placeholder="請輸入電子信箱" v-model="RegisterEmail">
+                    <input type="password" class="mx-auto" placeholder="請輸入8-14碼密碼" v-model="RegisterPassword">
+                    <input class="mx-auto" type="tel" placeholder="請輸入電話號碼" v-model="RegisterPhone">
+                    <input class="mx-auto" type="text" placeholder="姓名" v-model="RegisterCustomerName">
+                    <input class="mx-auto"type="date" placeholder="請選擇生日日期" v-model="RegisterBirthday">
+                </div>
+
+                <button class="login" type="submit" v-on:click="Register">註冊</button>
+                @*<div class="linear">
+                                <span style="white-space:pre"></span><span class="line"></span>
+                                <span style="white-space:pre"></span><span class="txt">或</span>
+                                <span style="white-space:pre"></span> <span class="line"></span>
+                            </div>
+                            <div class="other">
+                                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                                <i class="fab fa-facebook col-4"></i>
+                    <i class="col-4 fab fa-google-plus"></i>
+                        </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="LoginModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="~/Assest/img/下載.png" alt="">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <input class="mx-auto" type="text" placeholder="請輸入電子信箱"v-model="LoginEmail">
+                <input type="password" class="mx-auto" placeholder="請輸入8-14碼密碼" v-model="LoginPassword">
+                <button class="login" v-on:click="LoginMethod">登入</button>
+                <div class="linear">
+                    <span style="white-space:pre"></span><span class="line"></span>
+                    <span style="white-space:pre"></span><span class="txt">或</span>
+                    <span style="white-space:pre"></span> <span class="line"></span>
+                </div>
+                <div class="other">
+                    <i class="fab fa-facebook col-4"></i>
+                    <i class="col-4 fab fa-google-plus"></i>
+                </div>
+                <div class="sign_up">
+                    <p>沒有帳號嗎?<a data-dismiss="modal" aria-label="Close" href="" data-toggle="modal" data-target="#RegisterModel">註冊</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section endJS{
+    
+    
+
+   
+}

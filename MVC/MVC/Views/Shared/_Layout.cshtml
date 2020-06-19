@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title DLUDOT</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    @* <script src="~/Assest/js/jquery-3.4.1.min.js"></script>*@
+
+
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+
+
+    <script src="~/Assest/js/_NavbarPartial.js"></script>
+
+
+    <link href="~/Assest/css/_NavbarPartial .css" rel="stylesheet" />
+    <link href="~/Assest/css/Footer.css" rel="stylesheet" />
+    @*<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />*@
+    @RenderSection("topCSS", required: false)
+    @RenderSection("scripts", required: false)
+
+    @* 購物車Js *@
+    <script type="text/javascript">
+        //網頁載入完成時執行之function
+
+
+        //加入編號為productId的商品進購物車
+        function AddToCart(productId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AddToCart", "Cart")',
+                data: { id: productId }
+            })
+            .done(function (msg) {
+                //將回傳的購物車頁面 填入 li#Cart
+                $('div#Cart').html(msg);
+            });
+        }
+         //移除購物車內商品
+        function RemoveFromCart(productId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RemoveFromCart", "Cart")',
+                data: { id: productId }
+            })
+                .done(function (msg) {
+                    //將回傳的購物車頁面 填入 li#Cart
+                    $('div#Cart').html(msg);
+                });
+        }
+
+        //清空購物車內所有商品
+        function ClearCart() {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("ClearCart", "Cart")',
+                data: {}
+            })
+            .done(function (msg) {
+                //將回傳的購物車頁面 填入 li#Cart
+                $('div#Cart').html(msg);
+            });
+        }
+        let change = () =>
+        {
+            let oSpan = document.querySelector("h2");
+            let content = document.getElementById("wavycontent").innerText;
+            oSpan.setAttribute("data-before", content);
+        };
+</script>
+
+  
+</head>
+
+<body>
+
+    @Html.Partial("_NavbarPartial", new MVC.Models.Database.Customer())
+
+    @RenderBody()
+
+
+    @Html.Partial("_FooterPartial")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Assest/js/Controller/Register.js"></script>
+    <script src="~/Assest/js/Controller/Login.js"></script>
+    <script src="~/Assest/js/GetCustomerInfo.js"></script>
+    <script src="~/Assest/js/LoginType.js"></script>
+    
+    @*@RenderSection("scripts", required: false)*@
+
+    @RenderSection("endJS", required: false)
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿.for_slick_slider {
+    display: flex;
+    padding:30px 15px;
+}
+
+    .for_slick_slider .items {
+        /*width: 350px;
+        height: 250px;*/
+        
+        position: relative;
+
+    }
+
+        .for_slick_slider .items .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: .6;
+        }
+
+    .for_slick_slider .slick-center .overlay {
+        opacity: 1;
+        transform: scale(0.1);
+    }
+
+    .for_slick_slider .items img {
+        width: 100%;
+        
+        transition: all linear .5s;
+    }
+
+    /*.for_slick_slider .slick-center img {
+        transform: scale(1.1);
+    }*/

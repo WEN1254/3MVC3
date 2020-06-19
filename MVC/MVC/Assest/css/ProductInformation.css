@@ -1,0 +1,142 @@
+
+
+img {
+    object-fit: cover;
+}
+
+.color_btn {
+    display: flex;
+}
+
+a div:nth-child(0) {
+    background-color: rgb(64, 64, 64);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+a div:nth-child(1) {
+    background-color: rgb(51, 51, 51);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.product {
+    padding-top: 50px;
+}
+.product li{
+    padding-top: 30px;
+}
+
+.buy {
+    text-align: left;
+}
+
+.buynumber {
+    background-color: #aaa;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    text-align: center;
+    height: 50px;
+    padding-right: 20px;
+}
+
+.buybutton {
+    background-color: black;
+    border: none;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.row {
+    justify-content: space-around;
+}
+
+.wrapper {
+    height: 500px;
+    background-color: #f4f4f0;
+}
+
+    .wrapper h2 {
+        padding: 76px;
+        text-align: center;
+    }
+
+    .wrapper p {
+        width: 665px;
+        margin: auto;
+    }
+
+.demo_picture {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.product_dimensions h2 {
+    display: block;
+    text-align: center;
+    padding: 50px;
+}
+
+.product_details {
+    background-color: #f4f4f0;
+}
+
+.product_details_title {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.materials {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 50px;
+    /*padding-left: 27%;*/
+    padding-bottom: 50px;
+}
+
+.product_details_a {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.interest_you {
+    border-top: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+}
+
+.interest_you_title {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.interest_you_card p {
+    text-align: center;
+}
+
+.shopping_notice_card {
+    border-top: 2px solid #aaa;
+    text-align: left;
+}
+
+.shipping {
+    padding: 100px 100px;
+}
+
+    .shipping h3 {
+        padding-bottom: 30px;
+    }
+
+.return {
+    padding: 100px 100px;
+}
+
+    .return h3 {
+        padding-bottom: 30px;
+    }

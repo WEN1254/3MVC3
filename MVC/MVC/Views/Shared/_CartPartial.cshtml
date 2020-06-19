@@ -1,0 +1,53 @@
+﻿@{
+    //取得當前購物車所有內容
+    var currentCart = MVC.Models.Carts.Operation.GetCurrentCart();
+}
+
+
+
+<h1>購物車</h1>
+<Hr Width="w-100" Color="black">
+
+<div class="overflow-scroll w-100">
+    @foreach (var cartitem in currentCart)
+    {
+        <div class="details ">
+            <div class="row">
+                <div class="item_pic col-6">
+                    <img src="~/Assest/img/ProductImg/@cartitem.Image" class="w-100" alt="">
+                </div>
+                <div class="item_txt col-6">
+
+                    <button class="close shop_close" onclick="RemoveFromCart('@cartitem.PSID')">
+                        X
+                    </button>
+                    <strong>@cartitem.Name</strong>
+                    <p>Color:@cartitem.color</p>
+
+                    <p>Qty:@cartitem.Quantity <span>$@cartitem.Price</span></p>
+
+
+                </div>
+            </div>
+        </div>
+    }
+    @String.Format("共{0}元 ", currentCart.TotalAmount)
+
+    <p>
+        <a id="Checkout" class="btn btn-default text-center" href="~/Order/Index">結帳去</a>
+        <a id="Checkout" class="btn btn-default text-center" onclick="ClearCart()">清空</a>
+    </p>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

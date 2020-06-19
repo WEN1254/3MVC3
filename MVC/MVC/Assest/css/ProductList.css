@@ -1,0 +1,138 @@
+* {
+    font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+}
+
+.product_name {
+    margin: 0 16px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.product_name_home {
+    text-align: left;
+}
+
+    .product_name_home a,
+    .product_name_home a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+.product_name p {
+    font-size: 60px;
+}
+
+.storeby {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.product_list {
+    display: flex;
+    padding: 0 16px;
+}
+
+.product_a {
+    color: black;
+}
+
+    .product_a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+.img {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 90%;
+}
+
+.card {
+    border: 0px;
+}
+
+.product_only {
+    box-shadow: none;
+    margin-top: 50px;
+    transition: .3s;
+}
+
+    .product_only:hover {
+        transform: scale(1.1);
+    }
+
+
+
+.wavy {
+    position: relative;
+}
+
+    .wavy #wavycontent {
+        /*position: absolute;
+        */
+        font-size: 8em;
+        position: relative;
+        color: transparent;
+        -webkit-text-stroke: 2px #000;
+    }
+
+        .wavy #wavycontent::before {
+            content: attr(data-before);
+            position: absolute;
+            color: #000;
+            animation: animate 4s ease-in-out infinite;
+        }
+
+@keyframes animate {
+    0%, 100% {
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+/* 分隔 */
+.match {
+    border-radius:10px;
+    background-color: #000;
+    position:fixed !important;
+    z-index: 1;
+    top: 425px;
+    left: -240px;
+    width: 240px;
+    transition:.2s;
+
+    }
+
+    .match button {
+        margin-left: 13px;
+        border:none;
+        background:#000;
+        color:#fff;
+    }
+
+input:checked ~ .match {
+    left: 0px;
+}
+
+button {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+}
+
+    button:focus {
+        outline: none;
+    }
+
+#check_order {
+    display: none;
+}
+
+#AddToCart{
+   background-color:black;
+   color:white;
+}

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MVC.ViewModels.ProductListViewModel>
+
+
+<div class="container">
+    <div class="product_name">
+        <div class="wavy">
+            <h2 id="wavycontent">Bestsellers</h2>
+        </div>
+        <div class="storeby">
+
+
+            <input type="checkbox" id="check_order">
+            <span><button for="check_order" onclick="match()">SORT BY BEST MATCH</button></span>
+            <div class="match">
+                <button> @Html.ActionLink("BESTSELLERS", "Bestsellers", new { sortOrder = ViewBag.QuantityParm })</button>
+                <br>
+                <button>@Html.ActionLink("NAMES FROM SMALL TO LARGE", "Bestsellers", new { sortOrder = ViewBag.NameSortParm })</button>
+                <br>
+                <button> @Html.ActionLink("NAMES FROM LARGE TO SMALL", "Bestsellers", new { sortOrder = ViewBag.NamedescSortParm })</button>
+                <br>
+                <button> @Html.ActionLink("PRICE LOW TO HIGH", "Bestsellers", new { sortOrder = ViewBag.PriceSortParm })</button>
+                <br>
+                <button> @Html.ActionLink("PRICE HIGH TO LOW", "Bestsellers", new { sortOrder = ViewBag.PricedescSortParm })</button>
+                <br>
+                <button>@Html.ActionLink("RESET", "Bestsellers", new { sortOrder = ViewBag.ResetParm })</button>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="product_list row">
+        @foreach (var item in Model)
+        {
+            <div class="col-6 col-md-4 col-xl-3 product_only ">
+                <a href="~/ProductList/ProductInformation/@item.ProductSpecificationID" class="product_a">
+                    <div class="card">
+                        <div class="img">
+                            <img src="~/Assest/img/ProductImg/@Html.DisplayFor(modelItem => item.Image)"
+                                 alt="圖片說明" class="card-img-top">
+                            @*<img src="~/Assest/img/下載.png" alt="">*@
+                        </div>
+                        <div class="card-body">
+
+                            <p id="Name" class="card-title"><strong>@Html.DisplayFor(modelItem => item.ProductName)</strong></p>
+
+                            <p id="Price" class="card-text"> $@Html.DisplayFor(modelItem => item.Price)</p>
+                            <p id="Quantity"> @Html.DisplayFor(modelItem => item.Quantity)  Left</p>
+                            <p>
+                                <a onclick="AddToCart(' @Html.DisplayFor(modelItem => item.ProductSpecificationID)')"
+                                   class="btn btn-primary" role="button" id="AddToCart">
+                                    Add To Cart
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+
+@section topCSS{
+    <link href="~/Assest/css/ProductList.css" rel="stylesheet" />
+    @*<link href="~/Content/Chart.css" rel="stylesheet" />*@
+    <style type="text/css">
+    </style>
+}
+@section endJS{
+    <script src="~/Assest/js/ProductList.js"></script>
+    <script type="text/javascript"></script>
+}
+
+
+
+
+
+
+
+
+

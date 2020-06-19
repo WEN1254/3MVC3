@@ -1,0 +1,374 @@
+.SIGN {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+
+    .SIGN a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .SIGN a:hover {
+            color: gray;
+        }
+
+.collapse a {
+    color: black;
+}
+
+.collapse .search {
+    padding: 0 30px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+
+input {
+    display: none;
+}
+
+.collapse {
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+    .collapse #btn {
+        border: none;
+    }
+
+.transparent {
+    position: fixed;
+    height: 1000px;
+    width: 1660px;
+    background-color: white;
+    opacity: 0.7;
+    top: 0px;
+    right: -1660px;
+}
+
+input:checked ~ .transparent {
+    right: 300px;
+}
+
+
+
+
+.shop {
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    right: -430px;
+    height: 100%;
+    width: 430px;
+    transition: .2s;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+    .shop:hover {
+        overflow-y: scroll;
+    }
+
+    .shop h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+input:checked ~ .shop {
+    right: 0px;
+}
+
+.item_txt {
+    margin: auto;
+}
+/* 分隔 */
+.announcement {
+    width: 100%;
+    position: sticky;
+    top: 70px;
+    z-index: 1;
+    background-color: rgb(24, 33, 71);
+    color: white;
+    text-align: center;
+}
+
+    .announcement a {
+        color: white;
+    }
+
+.product_name {
+    margin: 0 16px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.product_name_home {
+    text-align: left;
+}
+
+    .product_name_home a, .product_name_home a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+.product_name p {
+    font-size: 60px;
+}
+
+.storeby {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.product_list {
+    display: flex;
+    padding: 0 16px;
+}
+
+.product_a {
+    color: black;
+}
+
+    .product_a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+.img {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 90%;
+}
+
+.card {
+    border: 0px;
+}
+/*分隔*/
+.navbar-brand img {
+    width: 40px;
+    height: 5ex;
+}
+
+.active {
+    color: #000;
+}
+
+    .active a {
+        color: #000;
+        border-bottom: 1px solid transparent;
+        transition: .2s;
+    }
+
+        .active a:hover {
+            color: #87A0B2;
+            border-bottom: 1px solid#87A0B2;
+        }
+
+.nav_icon {
+    font-size: 18px;
+}
+
+    .nav_icon i {
+        margin: 10px;
+        color: #fff;
+        transition: .2s;
+    }
+
+        .nav_icon i:hover {
+            color: #87A0B2;
+        }
+
+/*分隔*/
+* {
+    font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+}
+
+.modal-body {
+    width: 520px;
+    height: 700px;
+    border: 1px solid #666;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    background-image: url(https://walpa.tw/upload/save_image/11191700_5dd3a12367c5f.jpg);
+    background-size: cover;
+}
+
+i {
+    color: #000;
+}
+
+.account input {
+    font-size: 14px;
+    border: 1px solid#ccc;
+    border-radius: 3px;
+    background-color: rgba(246, 245, 245, 0.849);
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 258px;
+    height: 36px;
+}
+
+#LoginModal .modal-body {
+    width: 520px;
+    height: 500px;
+    border: 1px solid #666;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    background-image: url(https://walpa.tw/upload/save_image/11191700_5dd3a12367c5f.jpg);
+    background-size: cover;
+}
+
+i {
+    width: 25px;
+    color: #000;
+}
+
+
+#LoginModal .modal-body .close {
+    outline: none;
+}
+
+#LoginModal .modal-body input {
+    font-size: 14px;
+    border: 1px solid#ccc;
+    border-radius: 3px;
+    background-color: rgba(246, 245, 245, 0.849);
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 258px;
+    height: 36px;
+}
+
+.modal-body img {
+    width: 75px;
+    height: 125px;
+}
+
+.modal-body .login {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    width: 258px;
+    font-size: 14px;
+    padding: 5px;
+    background-color: rgba(246, 245, 245, 0.849);
+}
+
+.other {
+    margin: 15px auto;
+    width: 258px;
+}
+
+    .other i {
+        font-size: 50px;
+    }
+
+    .other .fa-facebook {
+        color: #3b5998;
+    }
+
+    .other .fa-google-plus {
+        color: #dd4b39;
+    }
+
+.linear {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+    .linear .line {
+        display: inline-block;
+        width: 30%;
+        border-top: 1px solid #666;
+    }
+
+    .linear .txt {
+        font-weight: 600;
+        color: #666;
+        vertical-align: middle;
+    }
+
+.sign_up a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#btn {
+    background: #343a40;
+}
+/*#Google{
+    background: red;
+}
+
+#Facebook {
+    background: blue;
+}*/
+.navbar-nav .drop-down-menu, .navbar-nav .drop-down-menu .hidden {
+    list-style: none;
+}
+
+li.drop-down-menu ul {
+    display: none;
+    font-family:sans-serif;
+}
+
+li.drop-down-menu:hover > ul, .hidden:hover {
+    display: block;
+}
+
+.hidden {
+    position: fixed;
+    z-index: 2;
+    /*margin-top: 10px;*/
+    margin-left: 4px;
+    background-color: #343a40 !important;
+    padding: 20px
+}
+
+    .hidden a {
+        color: white;
+    }
+
+ul.drop-down-menu li {
+    white-space: nowrap;
+}
+
+.pic {
+    width: 50%;
+}
+
+    .pic img {
+        width: 100%;
+    }
+
+.detail {
+    margin-top: 55%;
+}
+
+.table_item {
+    width: 50%;
+}
+
+#Checkout {
+    background-color: black;
+    color: white;
+}
+
+
+.shop_close{
+    
+    color:red;
+   
+}

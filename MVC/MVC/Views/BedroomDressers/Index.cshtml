@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MVC.ViewModels.ProductListViewModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="product_name">
+        <div class="product_name_home">
+            <a href="#">Home</a>
+            <span>Bestselling Modern Furniture Designs</span>
+        </div>
+        <p class="wavy">
+
+            <strong style="--i:1;">B</strong>
+            <strong style="--i:2;">e</strong>
+            <strong style="--i:3;">d</strong>
+            <strong style="--i:4;">r</strong>
+            @*&nbsp;*@
+            <strong style="--i:5;">o</strong>
+            <strong style="--i:6;">o</strong>
+            <strong style="--i:7;">m</strong>
+            <br />
+            @*&nbsp;*@
+            <strong style="--i:8;">D</strong>
+            <strong style="--i:9;">r</strong>
+            <strong style="--i:10;">e</strong>
+            <strong style="--i:11;">s</strong>
+            <strong style="--i:12;">s</strong>
+            <strong style="--i:13;">e</strong>
+            <strong style="--i:14;">r</strong>
+            <strong style="--i:15;">s</strong>
+
+        </p>
+        <div class="storeby">
+
+            <input type="checkbox" id="check_order">
+            <span><button for="check_order" onclick="match()">SORT BY BEST MATCH</button></span>
+            <div class="match">
+                <button>BESTSELLERS</button>
+                <br>
+                <button>NEW</button>
+                <br>
+                <button>PRICE LOW TO HIGH</button>
+                <br>
+                <button>PRICE HIGH TO LOW</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="product_list row">
+        @foreach (var item in Model)
+        {
+            <div class="col-6 col-md-4 col-xl-3 product_only ">
+                <a href="~/ProductInformation/Index" class="product_a">
+                    <div class="card">
+                        <div class="img">
+                            <img src="~/Assest/img/ProductImg/@Html.DisplayFor(modelItem => item.Image)"
+                                 alt="圖片說明" class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <strong>
+                                <p class="card-title"> @Html.DisplayFor(modelItem => item.ProductName)</p>
+                            </strong>
+                            <p class="card-text"> $@Html.DisplayFor(modelItem => item.Price)</p>
+                            <p> @Html.DisplayFor(modelItem => item.Quantity)  Left</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+
+    </div>
+</div>
+
+
+
+@section topCSS{
+    <link href="~/Assest/css/ProductList.css" rel="stylesheet" />
+    <link href="~/Content/Chart.css" rel="stylesheet" />
+    <style type="text/css">
+        /*.product_name .wavy {
+            font-size: 40px
+        }*/
+    </style>
+}
+@section endJS{
+    <script src="~/Assest/js/ProductList.js"></script>
+    <script type="text/javascript">
+    </script>
+}
+

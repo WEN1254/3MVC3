@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* 分隔 */
+.head {
+    width: 100%;
+    position: relative;
+}
+
+.head_pic img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.head_title {
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+    .head_title button {
+        background-color: white;
+        border: 1px solid black;
+    }
+
+/* 分隔 */
+.content_item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+    .content_item a {
+        color: black;
+    }
+
+    .content_item img {
+        width: 80%;
+    }
+
+.content svg {
+    font-size: 30px;
+}
+
+.content {
+    position: relative;
+}
+
+    .content .bi-chevron-left {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+    }
+
+    .content .bi-chevron-right {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+    }
+
+    .content button {
+        border: 1px solid white;
+    }
+
+
+
+/* 分隔 */
+.Recently_title {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.Recently_text {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* 分隔 */
+
+.Recently .item {
+    position: relative;
+}
+
+.Recently img {
+    width: 100%;
+}
+
+.Recently .row {
+    margin: 0px;
+}
+
+.Recently h2 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+.Recently a {
+    color: black;
+}
+
+
+/* 分隔 */
+.NEWS_title {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.NEWS_text {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* 分隔 */
+.NEWS .item_pic img {
+    width: 100%;
+}
+
+.NEWS .item {
+    position: relative;
+}
+
+.NEWS .item_txt {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+    .NEWS .item_txt h2 {
+        color: white;
+    }
+
+    .NEWS .item_txt button {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid white;
+        color: white;
+    }
+
+.NEWS .item_story {
+    position: relative;
+}
+
+    .NEWS .item_story .item_story_txt {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+        .NEWS .item_story .item_story_txt h2 {
+            color: black;
+        }
+
+        .NEWS .item_story .item_story_txt button {
+            background-color: white;
+            border: 1px solid white;
+            border-bottom: 2px solid black;
+        }
+
+    .NEWS .item_story a:hover {
+        text-decoration: none;
+    }
+/* 分隔 */
+.NEWS .item_storys {
+    display: flex;
+}
+
+    .NEWS .item_storys .item_storys_txt {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+        .NEWS .item_storys .item_storys_txt h2 {
+            color: black;
+        }
+
+        .NEWS .item_storys .item_storys_txt button {
+            background-color: white;
+            border: 1px solid white;
+            border-bottom: 2px solid black;
+        }
+
+    .NEWS .item_storys a:hover {
+        text-decoration: none;
+    }
