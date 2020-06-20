@@ -1,4 +1,5 @@
-﻿using MVC.Models.Repository.DatabaseLogicLayer;
+﻿using MVC.Models.Database;
+using MVC.Models.Repository.DatabaseLogicLayer;
 using MVC.ViewModels.Customer;
 using MVC.ViewModels.Customer.Input;
 using MVC.ViewModels.Customer.Output;
@@ -54,11 +55,9 @@ namespace MVC.Models.Repository.BussinessLogicLayer
 
             result = queryresult.Select(x => new CustomerLogin_Outputmodel
             {
-
+                CustomerID = x.CustomerID,
                 Password = x.Password
             }).ToList();
-
-
             if (result.Count!=0)
             {
                 return result;
@@ -67,21 +66,45 @@ namespace MVC.Models.Repository.BussinessLogicLayer
             {
                 return null;
             }
-
-
-
         }
         public List<GetCustomerOutput> Login_GetCustomer(GetCustomerInput Input)
         {
             List<GetCustomerOutput> result;
+
             var queryresult = _LoginDAO.Login_GetCustomer(Input.LoginUser);
+
 
             result = queryresult.Select(x => new GetCustomerOutput
             {
-                Email = x.Email,
                 CustomerName = x.CustomerName,
-                Phone = x.Phone,
-                BirthDay = x.Birthday
+                Password=x.Password,
+                Email = x.Email,
+                Phone=x.Phone,
+                BirthDay=x.Birthday
+            }).ToList();
+            return result;
+            
+            
+        }
+        public List<CustomerOrder_OutputModel> Login_GetOrder(GetCustomerInput Input)
+        {
+            List<CustomerOrder_OutputModel> result;
+
+            var queryresult = _LoginDAO.Login_GetOrder(Input.LoginUser);
+
+
+            result = queryresult.Select(x => new CustomerOrder_OutputModel
+            {
+                OrderEmail = x.OrderEmail,
+                OrderID = x.OrderID,
+                RecieverName = x.RecieverName,
+                ProductName = x.ProductName,
+                Colour = x.Colour,
+                Img = x.Img,
+                BuyQuantity = x.BuyQuantity,
+                Price = x.Price,
+                ProductTotal = x.ProductTotal
+
             }).ToList();
             return result;
 

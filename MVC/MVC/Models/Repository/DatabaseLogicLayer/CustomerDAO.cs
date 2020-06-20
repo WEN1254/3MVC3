@@ -14,19 +14,7 @@ namespace MVC.Models.Repository.DatabaseLogicLayer
     public class CustomerDAO
     {
         private string SQLConnectionStr = ConfigurationManager.ConnectionStrings["MVCContext"].ConnectionString;
-        public IEnumerable<Customer> GetAllMember()
-        {
-            string SQLcommand = @"SELECT * FROM Customers";
-
-            IEnumerable<Customer> result;
-
-            using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
-            {
-                result = conn.Query<Customer>(SQLcommand);
-            }
-
-            return result;
-        }
+        
         public IEnumerable<Customer> Login_CheckAccount(CustomerLogin_Inputmodel Input)
         {
             string Sqlcommand = @" SELECT Email from Customers where Email=@L1";
@@ -74,6 +62,20 @@ namespace MVC.Models.Repository.DatabaseLogicLayer
             using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
             {
                 result = conn.Query<Customer>(Sqlcommand, new { CustomerEmail = Email });
+            }
+            return result;
+        }
+        public IEnumerable<Customer> Replace(CustomerReplaceInputModel Input)
+        {
+            string Sqlcommand = @" Update Customers SET Birthday=@c2,CustomerName=@c3,Phone=@c4,Password=@c5
+                                    from Customers                                    
+                                    where Email=@c1";
+
+            IEnumerable<Customer> result;
+
+            using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
+            {
+                result = conn.Query<Customer>(Sqlcommand, new { c1 = Input.ReplaceEmail, c2 = Input.ReplaceBirthDay, c3 = Input.ReplaceCustomerName, c4 = Input.ReplacePhone,c5=Input.ReplacePassword });
             }
             return result;
         }

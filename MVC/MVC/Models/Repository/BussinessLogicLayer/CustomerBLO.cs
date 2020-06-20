@@ -17,25 +17,7 @@ namespace MVC.Models.Repository.BussinessLogicLayer
         {
             _CustomerDAO = new CustomerDAO();
         }
-        public List<Customer_GetAll_OutModel> GetAllMember()
-        {
-            List<Customer_GetAll_OutModel> result;
-
-            var queryresult = _CustomerDAO.GetAllMember();
-
-
-            result = queryresult.Select(x => new Customer_GetAll_OutModel
-            {
-                CustomerID = x.CustomerID,
-                CustomerName = x.CustomerName,
-                Birthday = x.Birthday,
-                Email = x.Email,
-                Password = x.Password,
-                Phone = x.Phone,
-            }).ToList();
-
-            return result;
-        }
+        
         public List<CustomerRegister_Outputmodel> Register(CustomerRegister_Inputmodel input)
         {
 
@@ -63,6 +45,27 @@ namespace MVC.Models.Repository.BussinessLogicLayer
             {
                 return null;
             }
+        }
+        public List<CustomerReplace_OuputModel> Replace(CustomerReplaceInputModel input)
+        {
+
+            List<CustomerReplace_OuputModel> model;
+
+            var CheckAccount = _CustomerDAO.CheckEmail(input.ReplaceEmail);
+
+            var queryresult = _CustomerDAO.Replace(input);
+
+           
+                model = queryresult.Select(x => new CustomerReplace_OuputModel
+                {
+                    ReplaceCustomerName = x.CustomerName,
+                    ReplaceEmail = x.Email,
+                    ReplacePassword=x.Password,
+                    ReplaceBirthday = x.Birthday,
+                    ReplacePhone = x.Phone,
+
+                }).ToList();
+                return model;
         }
     }
 }

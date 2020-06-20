@@ -2,6 +2,7 @@
 using MVC.Models.Database;
 using MVC.ViewModels.Customer;
 using MVC.ViewModels.Customer.Input;
+using MVC.ViewModels.Customer.Output;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -40,7 +41,7 @@ namespace MVC.Models.Repository.DatabaseLogicLayer
         }
         public IEnumerable<Customer> Login_CheckPassword(CustomerLogin_Inputmodel Input)
         {
-            string Sqlcommand = @" SELECT Password from Customers where Password=@L1";
+            string Sqlcommand = @" SELECT CustomerID,Password from Customers where Password=@L1";
 
             IEnumerable<Customer> result;
             using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
@@ -49,6 +50,7 @@ namespace MVC.Models.Repository.DatabaseLogicLayer
             }
             return result;
         }
+        
         public IEnumerable<Customer> Register(CustomerRegister_Inputmodel Input)
         {
             string Sqlcommand = @" INSERT INTO Customers(Email,Password,Birthday,CustomerName,Phone)
@@ -84,6 +86,24 @@ namespace MVC.Models.Repository.DatabaseLogicLayer
             using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
             {
                 result = conn.Query<Customer>(Sqlcommand, new { CustomerEmail = Email });
+            }
+            return result;
+        }
+        public IEnumerable<CustomerOrder_OutputModel> Login_GetOrder(string Email)
+        {
+            string Sqlcommand = @"
+            select c.Email,od.OrderID,o.RecieverName,p.ProductName,ps.Colour,ps.Image,od.BuyQuantity,od.Price,(od.BuyQuantity*od.Price) as ProductTotal
+            from OrderDetail od
+            inner join Orders o on o.OrderID=od.OrderID
+            inner join ProductSpecifications ps on ps.ProductSpecificationID=od.ProductSpecificationID
+            inner join Products p on p.ProductID=ps.ProductID
+            inner join Customers c on c.CustomerID=o.CustomerID
+            where c.Email=N@Email";
+
+            IEnumerable<CustomerOrder_OutputModel> result;
+            using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
+            {
+                result = conn.Query<CustomerOrder_OutputModel>(Sqlcommand, new { CustomerEmail = Email });
             }
             return result;
         }

@@ -221,10 +221,13 @@
     <Compile Include="ViewModels\ChartViewModels.cs" />
     <Compile Include="ViewModels\Customer\Input\CustomerLogin_Inputmodel.cs" />
     <Compile Include="ViewModels\Customer\Input\CustomerRegister_Inputmodel.cs" />
+    <Compile Include="ViewModels\Customer\Input\CustomerReplaceInputModel.cs" />
     <Compile Include="ViewModels\Customer\Input\Customer_GetAll_OutModel.cs" />
     <Compile Include="ViewModels\Customer\Input\GetCustomerInput.cs" />
     <Compile Include="ViewModels\Customer\Output\CustomerLogin_Outputmodel.cs" />
+    <Compile Include="ViewModels\Customer\Output\CustomerOrder_OutputModel.cs" />
     <Compile Include="ViewModels\Customer\Output\CustomerRegister_Outputmodel.cs" />
+    <Compile Include="ViewModels\Customer\Output\CustomerReplace_OuputModel.cs" />
     <Compile Include="ViewModels\Customer\Output\GetCustomerOutput.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Content Include="Assest\css\_NavbarPartial .css" />
@@ -1332,10 +1335,10 @@
     <Content Include="Assest\img\下載.png" />
     <Content Include="Assest\img\登入背景.jpg" />
     <Content Include="Assest\js\Controller\Login.js" />
+    <Content Include="Assest\js\Controller\LoginType.js" />
     <Content Include="Assest\js\Controller\Register.js" />
-    <Content Include="Assest\js\GetCustomerInfo.js" />
+    <Content Include="Assest\js\Controller\GetCustomerInfo.js" />
     <Content Include="Assest\js\jquery-3.4.1.min.js" />
-    <Content Include="Assest\js\LoginType.js" />
     <Content Include="Assest\js\tab.js" />
     <Content Include="Assest\js\_NavbarPartial.js" />
     <Content Include="Assest\css\slick.css" />
