@@ -27,6 +27,13 @@ namespace MVC.Controllers.Cart
             currentCart.AddProduct(id);
             return PartialView("_CartPartial");
         }
+
+        public ActionResult SubQty(int id)
+        {
+            var currentCart = Models.Carts.Operation.GetCurrentCart();
+            currentCart.SubQty(id);
+            return PartialView("_CartPartial");
+        }
         public ActionResult RemoveFromCart(int id)
         {
             var currentCart = Models.Carts.Operation.GetCurrentCart();

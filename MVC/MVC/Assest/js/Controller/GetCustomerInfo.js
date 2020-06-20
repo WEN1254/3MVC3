@@ -31,29 +31,29 @@
                 }
             }
         });
-        function GetOrder() {
-            let UserOrderEmail = {
-                LoginUser: localStorage.getItem("LoginUser")
-            }
+        //function GetOrder() {
+        //    let UserOrderEmail = {
+        //        LoginUser: localStorage.getItem("LoginUser")
+        //    }
 
-            $.ajax({
-                url: '/api/CustomerManager/GetOrder',
-                type: 'POST',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify(UserType),
-                async: true,
-                success: function (response) {
+        //    $.ajax({
+        //        url: '/api/CustomerManager/GetOrder',
+        //        type: 'POST',
+        //        contentType: "application/json; charset=utf-8",
+        //        dataType: "json",
+        //        data: JSON.stringify(UserType),
+        //        async: true,
+        //        success: function (response) {
 
-                    if (response.StatusCode == '1') {
-                        GetResponse(response.Result);
-                    }
-                    else {
-                        console.log(UserOrderEmail);
-                    }
-                }
-            });
-        },
+        //            if (response.StatusCode == '1') {
+        //                GetResponse(response.Result);
+        //            }
+        //            else {
+        //                console.log(UserOrderEmail);
+        //            }
+        //        }
+        //    });
+        //},
         function GetResponse(input) {
             console.log(input);
             this.CustomerInfo.UserData = input;

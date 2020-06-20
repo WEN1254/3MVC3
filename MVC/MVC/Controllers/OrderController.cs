@@ -15,7 +15,8 @@ namespace MVC.Controllers
         {
             return View();
         }
-        //[Authorize]
+        
+
         [HttpPost]
         public ActionResult Index(Models.OrderModel.Ship postback)
         {

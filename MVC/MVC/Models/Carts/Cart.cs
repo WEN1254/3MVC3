@@ -33,10 +33,12 @@ namespace MVC.Models.Carts
                 return totalAmount;
             }
         }
+
+
         public bool AddProduct(int ProductId)
         {
             var findItem = this.cartItems
-                            .Where(s => s.PSID== ProductId)
+                            .Where(s => s.PSID == ProductId)
                             .Select(s => s)
                             .FirstOrDefault();
 
@@ -73,19 +75,17 @@ namespace MVC.Models.Carts
             return true;
         }
 
-
-        //新增一筆Product，使用Product物件
         private bool AddProduct(ViewModels.ChartViewModels product)
         {
             //將Product轉為CartItem
             var cartItem = new Models.Carts.CartItem()
             {
-                PSID=product.ProductSpecificationID,
+                PSID = product.ProductSpecificationID,
                 Id = product.ProductID,
                 Name = product.ProductName,
                 Price = product.Price,
-                Image=product.Image,
-                color=product.Colour,
+                Image = product.Image,
+                color = product.Colour,
                 Quantity = 1
             };
             //加入CartItem至購物車
@@ -113,12 +113,44 @@ namespace MVC.Models.Carts
             return true;
         }
 
+        public bool SubQty(int ProductId)
+        {
+            var findItem = this.cartItems
+                            .Where(s => s.PSID == ProductId)
+                            .Select(s => s)
+                            .FirstOrDefault();
+
+            //判斷相同Id的CartItem是否已經存在購物車內
+            if (findItem.Quantity == 1)
+            {   //不存在購物車內，則新增一筆
+
+                return RemoveProduct(ProductId);
+
+
+
+            }
+            else
+            {   //存在購物車內，則將商品數量累加
+                findItem.Quantity -= 1;
+            }
+            return true;
+        }
+
+
+
+
+
+
+
+
         //清空購物車
         public bool ClearCart()
         {
             this.cartItems.Clear();
             return true;
         }
+
+
         public List<Models.Database.OrderDetail> ToOrderDetailList(int orderId)
         {
             var result = new List<Models.Database.OrderDetail>();
