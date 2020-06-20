@@ -26,7 +26,7 @@ var a = new Vue({
                     if (response.StatusCode == '1') {
                         UserType.push({ data })
                         localStorage.setItem("LoginUser", data.LoginEmail);
-                        
+                        window.location.href = '/Home/Index';
                     }
                     else if (response.StatusCode == '2') {
                         alert("此帳戶不存在");
@@ -36,13 +36,7 @@ var a = new Vue({
                 }
             });
         },
-        LoginTypeMethod: function () {
-            if (localStorage.setItem("LoginUser") != null) {
-                window.location.href = '/User/UserPage';
-            }
-            else {
-                $("#LoginModal").modal('show');
-            }
-        }
+        
+        
     },
 })
