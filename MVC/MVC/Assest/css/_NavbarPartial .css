@@ -376,3 +376,12 @@ ul.drop-down-menu li {
     color:red;
    
 }
+.aplus, .aless{
+    padding:0;
+    width:30px;
+    height:30px;
+}
+.row .item_txt .plus, .row .item_txt .less {
+    font-size: 12px;
+    margin: 0;
+}
