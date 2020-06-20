@@ -211,3 +211,40 @@
     .NEWS .item_storys a:hover {
         text-decoration: none;
     }
+
+.LineBot {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 5%;
+    border-radius: 50px;
+}
+
+#LineQr {
+    position: fixed;
+    bottom: 100px;
+    right: 0px;
+    display: none;
+}
+
+.LineQr_modal-header {
+    background-color: rgb(37, 182, 18);
+    color: white;
+}
+
+    .LineQr_modal-header img {
+        width: 10%;
+    }
+
+.LineQr_modal-title {
+    height: 1px;
+}
+
+.LineQr_modal-body {
+    width: 100%;
+    text-align: center;
+}
+
+    .LineQr_modal-body img {
+        width: 50%;
+    }

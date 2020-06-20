@@ -741,6 +741,8 @@
     <Content Include="Assest\img\InformationImg\Woodrow Twin Bed-設計圖.jpg" />
     <Content Include="Assest\img\InformationImg\You May Duvet Cover-頁面大圖.jpg" />
     <Content Include="Assest\img\InformationImg\You May Duvet Sham-頁面大圖.jpg" />
+    <Content Include="Assest\img\Line.png" />
+    <Content Include="Assest\img\LineQr.PNG" />
     <Content Include="Assest\img\ProductImg\Amicable Split 19 Bench-Smoke.jpg" />
     <Content Include="Assest\img\ProductImg\Amicable Split 19 Bench-Walnut.jpg" />
     <Content Include="Assest\img\ProductImg\Amicable Split 19 Bench-White Oak.jpg" />
