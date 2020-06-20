@@ -50,7 +50,7 @@
                 data: { id: productId }
             })
             .done(function (msg) {
-                //將回傳的購物車頁面 填入 li#Cart
+            
                 $('div#Cart').html(msg);
             });
         }
@@ -62,7 +62,7 @@
                 data: { id: productId }
             })
                 .done(function (msg) {
-                    //將回傳的購物車頁面 填入 li#Cart
+                   
                     $('div#Cart').html(msg);
                 });
         }
@@ -75,16 +75,27 @@
                 data: {}
             })
             .done(function (msg) {
-                //將回傳的購物車頁面 填入 li#Cart
+           
                 $('div#Cart').html(msg);
             });
         }
-        let change = () =>
-        {
-            let oSpan = document.querySelector("h2");
-            let content = document.getElementById("wavycontent").innerText;
-            oSpan.setAttribute("data-before", content);
-        };
+
+       
+
+        function SubQty(productId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("SubQty", "Cart")',
+                data: { id: productId }
+            })
+            .done(function (msg) {
+            
+                $('div#Cart').html(msg);
+            });
+        }
+
+
+      
 </script>
 
   

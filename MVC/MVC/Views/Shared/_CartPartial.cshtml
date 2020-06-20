@@ -24,7 +24,14 @@
                     <strong>@cartitem.Name</strong>
                     <p>Color:@cartitem.color</p>
 
-                    <p>Qty:@cartitem.Quantity <span>$@cartitem.Price</span></p>
+                    <a onclick="AddToCart('@cartitem.PSID')" class="btn btn-danger">
+                        +
+                    </a>
+                    <p>Qty:@cartitem.Quantity <span>$@cartitem.Amount</span></p>
+
+                    <a onclick="SubQty('@cartitem.PSID')" class="btn btn-success">
+                        -
+                    </a>
 
 
                 </div>
