@@ -76,17 +76,17 @@
                 <input type="checkbox" id="check_order">
                 <span><button for="check_order" onclick="match()">SORT BY BEST MATCH</button></span>
                 <div class="match">
-                    <button> @Html.ActionLink("BESTSELLERS", "Category", new { type = SmallId, sortOrder = ViewBag.QuantityParm }, null)</button>
+                    <button> @Html.ActionLink("BESTSELLERS", "Category", new { type = SmallId, sortOrder = ViewBag.QuantityParm }, new { @class = "match-a" })</button>
                     <br>
-                    <button>@Html.ActionLink("NAMES FROM SMALL TO LARGE", "Category", new { type = SmallId, sortOrder = ViewBag.NameSortParm })</button>
+                    <button>@Html.ActionLink("NAMES SMALL TO LARGE", "Category", new { type = SmallId, sortOrder = ViewBag.NameSortParm }, new { @class = "match-a" })</button>
                     <br>
-                    <button> @Html.ActionLink("NAMES FROM LARGE TO SMALL", "Category", new { type = SmallId, sortOrder = ViewBag.NamedescSortParm })</button>
+                    <button> @Html.ActionLink("NAMES LARGE TO SMALL", "Category", new { type = SmallId, sortOrder = ViewBag.NamedescSortParm }, new { @class = "match-a" })</button>
                     <br>
-                    <button> @Html.ActionLink("PRICE LOW TO HIGH", "Category", new { type = SmallId, sortOrder = ViewBag.PriceSortParm })</button>
+                    <button> @Html.ActionLink("PRICE LOW TO HIGH", "Category", new { type = SmallId, sortOrder = ViewBag.PriceSortParm }, new { @class = "match-a" })</button>
                     <br>
-                    <button> @Html.ActionLink("PRICE HIGH TO LOW", "Category", new { type = SmallId, sortOrder = ViewBag.PricedescSortParm })</button>
+                    <button> @Html.ActionLink("PRICE HIGH TO LOW", "Category", new { type = SmallId, sortOrder = ViewBag.PricedescSortParm }, new { @class = "match-a" })</button>
                     <br>
-                    <button>@Html.ActionLink("RESET", "Category", new { type = SmallId, sortOrder = ViewBag.ResetParm })</button>
+                    <button>@Html.ActionLink("RESET", "Category", new { type = SmallId, sortOrder = ViewBag.ResetParm }, new { @class = "match-a" })</button>
                 </div>
             </div>
         </div>
@@ -109,9 +109,8 @@
                                 <p id="Price" class="card-text"> $@Html.DisplayFor(modelItem => item.Price)</p>
 
                                 <p id="Quantity"> @Html.DisplayFor(modelItem => item.Quantity)  Left</p>
-                                <p>
-                                    <a onclick="AddToCart(' @Html.DisplayFor(modelItem => item.ProductSpecificationID)')" 
-                                       class="btn btn-primary" role="button" id="AddToCart">
+                                <p class="Carta">
+                                    <a onclick="AddToCart(' @Html.DisplayFor(modelItem => item.ProductSpecificationID)')" class="btn btn-primary" role="button" id="AddToCart">
                                         Add To Cart
                                     </a>
                                 </p>
@@ -126,6 +125,42 @@
 
     <link href="~/Assest/css/ProductList.css" rel="stylesheet" />
     <style type="text/css">
+        .container {
+            margin-bottom: 50px;
+        }
+
+        .card {
+            height: 100%;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .card-body .Carta {
+                margin: auto 0 0;
+                width: 100%;
+            }
+
+        #AddToCart {
+            background-color: #222;
+            width: 100%;
+        }
+
+        .card:hover {
+            border: 2px solid #dee2e6;
+            border-top: none;
+        }
+
+            .card:hover .card-body {
+                background-color: #dee2e6;
+                border: 2px solid #dee2e6;
+            }
+
+        .match-a {
+            color: white;
+        }
     </style>
 }
 @section endJS{

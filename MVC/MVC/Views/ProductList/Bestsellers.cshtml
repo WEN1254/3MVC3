@@ -12,17 +12,17 @@
             <input type="checkbox" id="check_order">
             <span><button for="check_order" onclick="match()">SORT BY BEST MATCH</button></span>
             <div class="match">
-                <button> @Html.ActionLink("BESTSELLERS", "Bestsellers", new { sortOrder = ViewBag.QuantityParm })</button>
+                <button> @Html.ActionLink("BESTSELLERS", "Bestsellers", new { sortOrder = ViewBag.QuantityParm }, new { @class = "match-a" })</button>
                 <br>
-                <button>@Html.ActionLink("NAMES FROM SMALL TO LARGE", "Bestsellers", new { sortOrder = ViewBag.NameSortParm })</button>
+                <button>@Html.ActionLink("NAMES SMALL TO LARGE", "Bestsellers", new { sortOrder = ViewBag.NameSortParm }, new { @class = "match-a" })</button>
                 <br>
-                <button> @Html.ActionLink("NAMES FROM LARGE TO SMALL", "Bestsellers", new { sortOrder = ViewBag.NamedescSortParm })</button>
+                <button> @Html.ActionLink("NAMES LARGE TO SMALL", "Bestsellers", new { sortOrder = ViewBag.NamedescSortParm }, new { @class = "match-a" })</button>
                 <br>
-                <button> @Html.ActionLink("PRICE LOW TO HIGH", "Bestsellers", new { sortOrder = ViewBag.PriceSortParm })</button>
+                <button> @Html.ActionLink("PRICE LOW TO HIGH", "Bestsellers", new { sortOrder = ViewBag.PriceSortParm }, new { @class = "match-a" })</button>
                 <br>
-                <button> @Html.ActionLink("PRICE HIGH TO LOW", "Bestsellers", new { sortOrder = ViewBag.PricedescSortParm })</button>
+                <button> @Html.ActionLink("PRICE HIGH TO LOW", "Bestsellers", new { sortOrder = ViewBag.PricedescSortParm }, new { @class = "match-a" })</button>
                 <br>
-                <button>@Html.ActionLink("RESET", "Bestsellers", new { sortOrder = ViewBag.ResetParm })</button>
+                <button>@Html.ActionLink("RESET", "Bestsellers", new { sortOrder = ViewBag.ResetParm }, new { @class = "match-a" })</button>
             </div>
 
 
@@ -35,7 +35,7 @@
                 <a href="~/ProductList/ProductInformation/@item.ProductSpecificationID" class="product_a">
                     <div class="card">
                         <div class="img">
-                            <img src="~/Assest/img/ProductImg/@Html.DisplayFor(modelItem => item.Image)"
+                            <img src="@Html.DisplayFor(modelItem => item.Image)"
                                  alt="圖片說明" class="card-img-top">
                             @*<img src="~/Assest/img/下載.png" alt="">*@
                         </div>
@@ -45,9 +45,8 @@
 
                             <p id="Price" class="card-text"> $@Html.DisplayFor(modelItem => item.Price)</p>
                             <p id="Quantity"> @Html.DisplayFor(modelItem => item.Quantity)  Left</p>
-                            <p>
-                                <a onclick="AddToCart(' @Html.DisplayFor(modelItem => item.ProductSpecificationID)')"
-                                   class="btn btn-primary" role="button" id="AddToCart">
+                            <p class="Carta">
+                                <a onclick="AddToCart(' @Html.DisplayFor(modelItem => item.ProductSpecificationID)')" class="btn btn-primary" role="button" id="AddToCart">
                                     Add To Cart
                                 </a>
                             </p>
@@ -66,6 +65,42 @@
     <link href="~/Assest/css/ProductList.css" rel="stylesheet" />
     @*<link href="~/Content/Chart.css" rel="stylesheet" />*@
     <style type="text/css">
+        .container {
+            margin-bottom: 50px;
+        }
+
+        .card {
+            height: 100%;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .card-body .Carta {
+                margin: auto 0 0;
+                width: 100%;
+            }
+
+        #AddToCart {
+            background-color: #222;
+            width: 100%;
+        }
+
+        .card:hover {
+            border: 2px solid #dee2e6;
+            border-top: none;
+        }
+
+            .card:hover .card-body {
+                background-color: #dee2e6;
+                border: 2px solid #dee2e6;
+            }
+
+        .match-a {
+            color: white;
+        }
     </style>
 }
 @section endJS{
