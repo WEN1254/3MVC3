@@ -188,7 +188,7 @@
     <Compile Include="Controllers\Cart\CartController.cs" />
     <Compile Include="Controllers\Cart\ProductController.cs" />
     <Compile Include="Controllers\CRUDController.cs" />
-    <Compile Include="Controllers\IntroductionController\SofasIntroductionController.cs" />
+    <Compile Include="Controllers\IntroductionController\ProductIntroductionController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Models\Carts\Cart.cs" />
@@ -1347,15 +1347,10 @@
     <Content Include="Assest\js\slick.min.js" />
     <Content Include="Assest\js\ProductList.js" />
     <Compile Include="Controllers\AboutUsController.cs" />
-    <Compile Include="Controllers\IntroductionController\AccessoriesIntroductionController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\IntroductionController\ChairsIntroductionController.cs" />
-    <Compile Include="Controllers\IntroductionController\TablesIntroductionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MvcHomeController.cs" />
-    <Compile Include="Controllers\IntroductionController\BedsIntroductionController.cs" />
-    <Compile Include="Controllers\IntroductionController\CabinetAndDressingtableIntroductionController.cs" />
     <Compile Include="Controllers\OutletController.cs" />
     <Compile Include="Controllers\ProductList\ProductListController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1542,12 +1537,6 @@
     <Content Include="Views\Shared\_NavbarPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
-    <Content Include="Views\AccessoriesIntroduction\Index.cshtml" />
-    <Content Include="Views\TablesIntroduction\Index.cshtml" />
-    <Content Include="Views\BedsIntroduction\Index.cshtml" />
-    <Content Include="Views\ChairsIntroduction\Index.cshtml" />
-    <Content Include="Views\CabinetAndDressingtableIntroduction\Index.cshtml" />
-    <Content Include="Views\SofasIntroduction\Index.cshtml" />
     <Content Include="Views\Shared\_CartPartial.cshtml" />
     <Content Include="Views\CRUD\Create.cshtml" />
     <Content Include="Views\CRUD\Delete.cshtml" />
@@ -1560,6 +1549,12 @@
     <Content Include="Views\ProductList\ProductInformation.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\User\UserPage.cshtml" />
+    <Content Include="Views\ProductIntroduction\Sofas.cshtml" />
+    <Content Include="Views\ProductIntroduction\Chairs.cshtml" />
+    <Content Include="Views\ProductIntroduction\Tables.cshtml" />
+    <Content Include="Views\ProductIntroduction\Beds.cshtml" />
+    <Content Include="Views\ProductIntroduction\CabinetAndDressingtable.cshtml" />
+    <Content Include="Views\ProductIntroduction\Accessories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
