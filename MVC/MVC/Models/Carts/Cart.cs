@@ -108,10 +108,14 @@ namespace MVC.Models.Carts
             }
             else
             {   //存在購物車內，將商品移除
-                this.cartItems.Remove(findItem);
+                //this.cartItems.Remove(findItem);
+                findItem.Quantity += 1;
+
+                this.cartItems.AddRange(findItem);
             }
             return true;
         }
+
 
         //清空購物車
         public bool ClearCart()
