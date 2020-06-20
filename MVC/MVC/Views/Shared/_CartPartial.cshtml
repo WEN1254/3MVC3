@@ -8,7 +8,7 @@
 <h1>購物車</h1>
 <Hr Width="w-100" Color="black">
 
-<div class="overflow-scroll w-100"id="UserType">
+<div class="overflow-scroll w-100">
     @foreach (var cartitem in currentCart)
     {
         <div class="details ">
@@ -34,7 +34,7 @@
     @String.Format("共{0}元 ", currentCart.TotalAmount)
 
     <p>
-        <a id="ShoppingGoBtn" class="btn btn-default text-center" >結帳去</a>
+        <a id="Checkout" class="btn btn-default text-center" href="~/Order/Index">結帳去</a>
         <a id="Checkout" class="btn btn-default text-center" onclick="ClearCart()">清空</a>
     </p>
     
