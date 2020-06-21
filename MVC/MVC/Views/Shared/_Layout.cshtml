@@ -31,6 +31,7 @@
 
 
     <link href="~/Assest/css/_NavbarPartial .css" rel="stylesheet" />
+    @*<link href="~/Assest/css/Footer.css" rel="stylesheet" />*@
     <link href="~/Assest/css/Footer.css" rel="stylesheet" />
     @*<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
         <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />*@
@@ -50,7 +51,7 @@
                 data: { id: productId }
             })
             .done(function (msg) {
-            
+
                 $('div#Cart').html(msg);
             });
         }
@@ -62,7 +63,7 @@
                 data: { id: productId }
             })
                 .done(function (msg) {
-                   
+
                     $('div#Cart').html(msg);
                 });
         }
@@ -75,12 +76,12 @@
                 data: {}
             })
             .done(function (msg) {
-           
+
                 $('div#Cart').html(msg);
             });
         }
 
-       
+
 
         function SubQty(productId) {
             $.ajax({
@@ -89,16 +90,64 @@
                 data: { id: productId }
             })
             .done(function (msg) {
-            
+
                 $('div#Cart').html(msg);
             });
         }
 
 
-      
-</script>
 
-  
+    </script>
+    <style>
+        .LineBot {
+            position: fixed;
+            bottom: 50px;
+            right: 58px;
+            width: 3.5%;
+            border-radius: 50px;
+        }
+
+        #LineQr {
+            width: 160px;
+            position: fixed;
+            bottom: 90px;
+            right: 10px;
+            display: none;
+            border: 2px;
+        }
+
+        .LineQr_modal-header {
+            background-color: rgb(37, 182, 18);
+            color: white;
+        }
+
+            .LineQr_modal-header img {
+                width: 20%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .LineQr_modal-header span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+
+        .LineQr_modal-title {
+            height: 1px;
+        }
+
+        .LineQr_modal-body {
+            width: 100%;
+            text-align: center;
+        }
+
+        .LineQr_modal-body img {
+            margin-top: 10px;
+            width: 50%;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -116,6 +165,23 @@
     <script src="~/Assest/js/Controller/Login.js"></script>
     <script src="~/Assest/js/Controller/LoginType.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+
+        var LineBotcount = 0;
+        function LineBot() {
+            if (LineBotcount % 2 == 0) {
+                var LineQr = document.getElementById("LineQr");
+                LineQr.style.display = "block";
+                LineBotcount++;
+            }
+            else {
+                var LineQr = document.getElementById("LineQr");
+                LineQr.style.display = "none";
+                LineBotcount++;
+            }
+        }
+
+    </script>
 
     @*@RenderSection("scripts", required: false)*@
 

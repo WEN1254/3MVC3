@@ -177,21 +177,13 @@
 </div>
 
 
-<button class="Line" onclick="LineBot()">
+@*<button class="Line" onclick="LineBot()">
     <img class="LineBot" src="~/Assest/img/Line.png" />
 </button>
-
-
-
-
-
-
-
 <div id="LineQr">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="LineQr_modal-header">
-
                 <h5 class="LineQr_modal-title">
                     <img src="~/Assest/img/Line.png" />  Line
                 </h5>
@@ -200,16 +192,11 @@
             <div class="LineQr_modal-body">
                 <img src="~/Assest/img/LineQr.PNG" />
                 <hr />
-
-
-
                 <p>透過行動條碼加好友</p>
             </div>
-
-
         </div>
     </div>
-</div>
+</div>*@
 
 
 
@@ -234,37 +221,8 @@
         var i_g = document.createElement("i");
         var i_f = document.createElement("i");
         i_g.setAttribute("class", "fab fa-google-plus");
-
-
         @*google.appendChild(i_g);*@
-
         i_f.setAttribute("class", "fab fa-facebook");
-
-
         @*facebook.appendChild(i_f);*@
-
-
-        var count = 0;
-        function LineBot() {
-            if (count % 2 == 0) {
-                var LineQr = document.getElementById("LineQr");
-                LineQr.style.display = "block";
-                count++;
-            }
-             else {
-                var LineQr = document.getElementById("LineQr");
-                LineQr.style.display = "none";
-                count++;
-
-
-
-            }
-
-
-
-        }
-
-
-
     </script>
 }
