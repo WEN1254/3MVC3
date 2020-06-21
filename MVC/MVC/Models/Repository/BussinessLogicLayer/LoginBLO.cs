@@ -95,12 +95,12 @@ namespace MVC.Models.Repository.BussinessLogicLayer
 
             result = queryresult.Select(x => new CustomerOrder_OutputModel
             {
-                OrderEmail = x.OrderEmail,
+                Email = x.Email,
                 OrderID = x.OrderID,
                 RecieverName = x.RecieverName,
                 ProductName = x.ProductName,
                 Colour = x.Colour,
-                Img = x.Img,
+                Image = x.Image,
                 BuyQuantity = x.BuyQuantity,
                 Price = x.Price,
                 ProductTotal = x.ProductTotal

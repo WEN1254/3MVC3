@@ -3,21 +3,23 @@
     ViewBag.Title = "UserPage";
 }
 
-<div id="UserData">
+<div id="UserData-Context">
     <b-card no-body>
-        <b-tabs card>
+        <b-tabs card v-model="tabIndex">
             <b-tab title="會員資料" active>
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="card-title">Edit Profile</h5>
                     </div>
-                    <div class="card-body" id="UserData">
+                    <div class="card-body">
                         <form>
                             <div class="row">
                                 <div class="col-md-6 px-1 ">
                                     <div class="form-group">
                                         <label>Email address</label>
-                                        <el-input class="form-control">{{UserData[0].Email}}</el-input>
+                                        @*<el-input class="form-control">{{UserData[0].Email}}</el-input>*@
+                                        <input readonly class="form-control" placeholder="Email"
+                                               v-model="UserData[0].Email">
                                     </div>
                                 </div>
                                 <div class="col-md-6 px-1 ">
@@ -58,38 +60,41 @@
                     </div>
                 </div>
             </b-tab>
-            <b-tab title="Tab 2">
-                @*<div id="CustomerOrder"class="dropdown"v-for="item in UserOrder">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        訂單編號:{{item.OrderID}},總金額:{{item.}},收件人:{{item.RecieverName}}
-                    </button>
-                    <table class="table table-hover dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <thead>
-                            <tr class="dropdown-item" href="#">
-                                <th scope="col">商品名稱</th>
-                                <th scope="col">商品規格</th>
-                                <th scope="col">商品數量</th>
-                                <th scope="col">商品價格</th>
-                                <th scope="col">商品圖片</th>
-                                <th scope="col">單項總金額</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="dropdown-item" href="#">
-                                <td>{{item.ProductName}}</td>
-                                <td>{{item.Colour}}</td>
-                                <td>{{item.BuyQuantity}}</td>
-                                <td>{{item.Price}}</td>
-                                <td><img src="{{item.Img}}" /></td>
-                                <td>{{item.ProductTotal}}</td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>*@
-               123
+            <b-tab title="訂單紀錄">
+                <div  v-for="item in UserOrderData">
+                    <b-button block v-b-toggle="item[0].OrderID"class="m-auto">
+                        <p> 訂單編號:{{item[0].OrderID}},收件人:{{item[0].RecieverName}}</p>
+                    </b-button>
+                    <b-collapse v-bind:id="item[0].OrderID" class="mt-2">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">商品名稱</th>
+                                    <th scope="col">商品規格</th>
+                                    <th scope="col">商品數量</th>
+                                    <th scope="col">商品價格</th>
+                                    <th scope="col">商品圖片</th>
+                                    <th scope="col">單項總金額</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="orderitem in item">
+                                    <td>{{orderitem.ProductName}}</td>
+                                    <td>{{orderitem.Colour}}</td>
+                                    <td>{{orderitem.BuyQuantity}}</td>
+                                    <td>{{orderitem.Price}}</td>
+                                    <td>
+                                        <div style="width: 50px;">
+                                            <img class="w-100" v-bind:src="orderitem.Image" />
+                                        </div>
+                                    </td>
+                                    <td>{{orderitem.ProductTotal}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </b-collapse>
+                </div>
             </b-tab>
-
         </b-tabs>
     </b-card>
 </div>

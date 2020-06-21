@@ -98,8 +98,8 @@ namespace MVC.Models.Repository.DatabaseLogicLayer
             inner join ProductSpecifications ps on ps.ProductSpecificationID=od.ProductSpecificationID
             inner join Products p on p.ProductID=ps.ProductID
             inner join Customers c on c.CustomerID=o.CustomerID
-            where c.Email=N@Email";
-
+            where c.Email=@CustomerEmail";
+            
             IEnumerable<CustomerOrder_OutputModel> result;
             using (SqlConnection conn = new SqlConnection(SQLConnectionStr))
             {

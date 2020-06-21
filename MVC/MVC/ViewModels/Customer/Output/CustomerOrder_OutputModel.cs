@@ -7,12 +7,12 @@ namespace MVC.ViewModels.Customer.Output
 {
     public class CustomerOrder_OutputModel
     {
-        public string OrderEmail { get; set; }
+        public string Email { get; set; }
         public string OrderID { get; set; }
         public string RecieverName { get; set; }
         public string ProductName { get; set; }
         public string Colour { get; set; }
-        public string  Img{ get; set; }
+        public string Image { get; set; }
         public string BuyQuantity { get; set; }
         public string Price { get; set; }
         public string ProductTotal { get; set; }

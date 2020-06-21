@@ -133,6 +133,7 @@ namespace MVC.ApiControllers
             }
 
         }
+        [HttpPost]
         public OutApiModels GetOrder([FromBody] GetCustomerInput input)
         {
             var queryresult = _LoginBLO.Login_GetOrder(input);

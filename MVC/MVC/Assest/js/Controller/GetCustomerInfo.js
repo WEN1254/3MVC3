@@ -1,11 +1,16 @@
 ﻿var CustomerInfo = new Vue({
-    el: '#UserData',
+    el: '#UserData-Context',
     data: {
         UserData: [
             {
                 Email: ''
             }
         ],
+        UserOrderData:
+            [
+                {
+                }
+            ],
         tabIndex: 0,
     },
     created: function () {
@@ -24,40 +29,47 @@
 
                 if (response.StatusCode == '1') {
                     GetResponse(response.Result);
-                    GetOrder();
                 }
                 else {
                     console.log(UserType);
                 }
             }
         });
-        //function GetOrder() {
-        //    let UserOrderEmail = {
-        //        LoginUser: localStorage.getItem("LoginUser")
-        //    }
-
-        //    $.ajax({
-        //        url: '/api/CustomerManager/GetOrder',
-        //        type: 'POST',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        data: JSON.stringify(UserType),
-        //        async: true,
-        //        success: function (response) {
-
-        //            if (response.StatusCode == '1') {
-        //                GetResponse(response.Result);
-        //            }
-        //            else {
-        //                console.log(UserOrderEmail);
-        //            }
-        //        }
-        //    });
-        //},
+        
         function GetResponse(input) {
             console.log(input);
             this.CustomerInfo.UserData = input;
         }
+
+        let UserOrderEmail = {
+            LoginUser: localStorage.getItem("LoginUser")
+        }
+
+        $.ajax({
+            url: '/api/CustomerManager/GetOrder',
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(UserOrderEmail),
+            async: true,
+            success: function (response) {
+                
+                if (response.StatusCode == '1') {
+                    GetOrderResponse(response.Result);
+                    
+                }
+                else {
+                    console.log(UserOrderEmail);
+                }
+            }
+        });
+
+        function GetOrderResponse(input) {
+            console.log(input);
+            this.CustomerInfo.UserOrderData = input.groupByOrderID('OrderId');
+            console.log(this.CustomerInfo.UserOrderData);
+        }
+        
     },
     methods: {
         Replace: function () {
@@ -92,24 +104,21 @@
     }
 
 });
-//var CutomerOrder = new Vue({
-//    el: '#CustomerOrder',
-//    data: {
-//        UserOrder: [
-//            {
-//            }
-//        ],
-//    },
+Array.prototype.groupByOrderID = function (prop) {
+    return this.reduce(function (groups, item) {
+        const val = item['OrderID']
+        groups[val] = groups[val] || []
+        groups[val].push(item)
+        return groups
+    }, {})
+};
 
 
-        function GetResponse(input) {
-            console.log(input);
-            this.CustomerInfo.UserOrder = input;
 
 
-        }
 
 
-//    },
 
-//});
+
+
+

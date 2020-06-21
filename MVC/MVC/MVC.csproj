@@ -1336,10 +1336,10 @@
     <Content Include="Assest\img\ProductImg\You May Duvet Sham-Oxblood.jpg" />
     <Content Include="Assest\img\下載.png" />
     <Content Include="Assest\img\登入背景.jpg" />
+    <Content Include="Assest\js\Controller\GetCustomerInfo.js" />
     <Content Include="Assest\js\Controller\Login.js" />
     <Content Include="Assest\js\Controller\LoginType.js" />
     <Content Include="Assest\js\Controller\Register.js" />
-    <Content Include="Assest\js\Controller\GetCustomerInfo.js" />
     <Content Include="Assest\js\jquery-3.4.1.min.js" />
     <Content Include="Assest\js\tab.js" />
     <Content Include="Assest\js\_NavbarPartial.js" />
@@ -1550,13 +1550,13 @@
     <Content Include="Views\ProductList\Category.cshtml" />
     <Content Include="Views\ProductList\ProductInformation.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\User\UserPage.cshtml" />
     <Content Include="Views\ProductIntroduction\Sofas.cshtml" />
     <Content Include="Views\ProductIntroduction\Chairs.cshtml" />
     <Content Include="Views\ProductIntroduction\Tables.cshtml" />
     <Content Include="Views\ProductIntroduction\Beds.cshtml" />
     <Content Include="Views\ProductIntroduction\CabinetAndDressingtable.cshtml" />
     <Content Include="Views\ProductIntroduction\Accessories.cshtml" />
+    <Content Include="Views\User\UserPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
