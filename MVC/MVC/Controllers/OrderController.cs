@@ -23,7 +23,7 @@ namespace MVC.Controllers
             if (this.ModelState.IsValid)
             {
                 var currentcart = Models.Carts.Operation.GetCurrentCart();
-                var UserId = 1;
+                var UserId = 2;
                 using(Models.Database._1MVC1Model db=new Models.Database._1MVC1Model())
                 {
                     var order = new Models.Database.Order()

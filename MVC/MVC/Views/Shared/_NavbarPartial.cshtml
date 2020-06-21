@@ -135,14 +135,8 @@
                     @Html.Partial("_CartPartial")
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
-
-
 </nav>
 
 <div class="modal fade" id="RegisterModel" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
@@ -155,7 +149,6 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-
                 <div class="account">
                     <input class="mx-auto" type="text" placeholder="請輸入電子信箱" v-model="RegisterEmail">
                     <input type="password" class="mx-auto" placeholder="請輸入8-14碼密碼" v-model="RegisterPassword">
@@ -163,7 +156,6 @@
                     <input class="mx-auto" type="text" placeholder="姓名" v-model="RegisterCustomerName">
                     <input class="mx-auto" type="date" placeholder="請選擇生日日期" v-model="RegisterBirthday">
                 </div>
-
                 <button class="login" type="submit" v-on:click="Register">註冊</button>
                 @*<div class="linear">
                                 <span style="white-space:pre"></span><span class="line"></span>
