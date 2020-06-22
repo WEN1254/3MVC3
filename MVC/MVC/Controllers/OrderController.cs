@@ -41,7 +41,11 @@ namespace MVC.Controllers
                     db.SaveChanges();
 
                 }
-                //return Content("訂購");
+                //return Content("");
+                var response = base.Response;
+                // Redirect temporarily.
+                // ... Don't throw an HttpException to terminate.
+                response.Redirect("~/Home/Index", false);
             }
             return View();
         }

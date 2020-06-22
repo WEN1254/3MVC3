@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<MVC.Models.Database.ProductSpecification>
-
 <div class="container">
     <div class="row">
         <div class="product_picture col-md-7 col-sm-12">
@@ -52,7 +51,7 @@
 </div>
 <div class="wrapper col-12">
     <h2 class="align-content-center w-100">@Model.First().Product.DescriptionTitle</h2>
-    <p>
+    <p class="align-content-center w-75">
         @Model.First().Product.ProductDescription
     </p>
 </div>
@@ -74,7 +73,7 @@
             @Model.First().Product.Particular
         </p>
     </div>
-    <div class="row product_details_a">
+    <div class="product_details_a">
         <div class="col-4 ">
             PRINT PRODUCT INFO
         </div>
@@ -86,24 +85,24 @@
         </div>
     </div>
 </div>
-<div class="interest_you">
-    <div class="interest_you_title w-100">
+<div class="interest_you w-100">
+    <div class="interest_you_title">
         <h2>This Might Interest You</h2>
     </div>
-    <div class="row interest_you_card">
-        <div class="col-4">
+    <div class="interest_you_card w-100">
+        <div class="col-4 col-sm-4">
             <img src="https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_405,q_auto,w_405/v1/media/catalog/product/c/t/ct1_deskwl_pg_3_4_cant-desk-walnut-grey_11_1.jpg"
                  alt="" class="w-100">
             <p>CANT DESK</p>
             <P>$799.00</P>
         </div>
-        <div class="col-4">
+        <div class="col-4 col-sm-4">
             <img src="https://res-1.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_405,q_auto,w_405/v1/media/catalog/product/m/i/minimalista-console-table-black-black-mirror-front_1.jpg"
                  alt="" class="w-100">
             <p>MINIMALISTA CONSOLE TABLE/p>
             <P>$549.00 - $699.00</P>
         </div>
-        <div class="col-4">
+        <div class="col-4 col-sm-4">
             <img src="https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_405,q_auto,w_405/v1/media/catalog/product/s/r/sr1_medtbl_sk_swept-medium-dining-table-smoke-on-ash_2.jpg"
                  alt="" class="w-100">
             <p>STRUT MEDIUM WOOD TABLE</p>
@@ -111,8 +110,8 @@
         </div>
     </div>
     <div class="shopping_notice">
-        <div class="row shopping_notice_card w-100">
-            <div class="shipping col-6">
+        <div class="shopping_notice_card col-12">
+            <div class="shipping col-6 col-sm-6 align-content-center">
                 <h3>Shipping</h3>
                 <p>Standard Shipping rates are 7% of your merchandise total.</p>
                 <p>
@@ -121,7 +120,7 @@
                 </p>
                 <p>Please note, delivery drivers do not walk dogs, cook meals or take off their shirts.</p>
             </div>
-            <div class="return col-6">
+            <div class="return col-6 col-sm-6 align-content-center">
                 <h3>Returns</h3>
                 <p>
                     Thrilled. Delighted. Satisfied. This is how we want you to feel about your Blu Dot purchase. If
@@ -141,21 +140,16 @@
     </div>
 </div>
 
-
-
 @section topCSS{
-
 
     <link href="~/Assest/css/ProductInformation.css" rel="stylesheet" />
 
     <style type="text/css">
+
     </style>
 }
 @section endJS{
-
     <script type="text/javascript">
-
-
 
 
     </script>
