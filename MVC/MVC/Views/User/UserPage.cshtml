@@ -2,7 +2,18 @@
 @{
     ViewBag.Title = "UserPage";
 }
-
+@section topCSS{
+    <style>
+        .orderBtn {
+            font-size:16px;
+            background-color: #343a40;
+            color: white;
+            font-weight: 600;
+            font-family:"Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+            border-radius: 5px;
+        }
+    </style>
+    }
 <div id="UserData-Context">
     <b-card no-body>
         <b-tabs card v-model="tabIndex">
@@ -62,7 +73,7 @@
             </b-tab>
             <b-tab title="訂單紀錄">
                 <div  v-for="item in UserOrderData">
-                    <b-button block v-b-toggle="item[0].OrderID"class="m-auto">
+                    <b-button block v-b-toggle="item[0].OrderID"class="m-auto orderBtn">
                         <p> 訂單編號:{{item[0].OrderID}},收件人:{{item[0].RecieverName}}</p>
                     </b-button>
                     <b-collapse v-bind:id="item[0].OrderID" class="mt-2">

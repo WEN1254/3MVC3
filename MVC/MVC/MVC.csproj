@@ -1335,7 +1335,13 @@
     <Content Include="Assest\img\ProductImg\You May Duvet Sham-Grey.jpg" />
     <Content Include="Assest\img\ProductImg\You May Duvet Sham-Oxblood.jpg" />
     <Content Include="Assest\img\下載.png" />
+    <Content Include="Assest\img\孫至凡.PNG" />
+    <Content Include="Assest\img\廖政凱.PNG" />
     <Content Include="Assest\img\登入背景.jpg" />
+    <Content Include="Assest\img\錢一瀚.PNG" />
+    <Content Include="Assest\img\陳俊傑.PNG" />
+    <Content Include="Assest\img\陳宏文.PNG" />
+    <Content Include="Assest\img\黃宣銘.PNG" />
     <Content Include="Assest\js\Controller\GetCustomerInfo.js" />
     <Content Include="Assest\js\Controller\Login.js" />
     <Content Include="Assest\js\Controller\LoginType.js" />
