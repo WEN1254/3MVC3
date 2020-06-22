@@ -26,7 +26,17 @@ var a = new Vue({
                     if (response.StatusCode == '1') {
                         UserType.push({ data })
                         localStorage.setItem("LoginUser", data.LoginEmail);
-                        window.location.href = '/Home/Index';
+                        swal({
+                            title: "Login Success!",
+                            text: "You have successfully logged in",
+                            icon: "success",
+                            confirmButtontext: "OK!",
+                            showCancelButton: true,
+                            closeOnConfirm: false
+
+                        }).then(function () {
+                            window.location.href = '/Home/Index';
+                        })
                     }
                     else if (response.StatusCode == '2') {
                         alert("此帳戶不存在");
