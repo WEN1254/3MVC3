@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<MVC.Models.Database.ProductSpecification>
 <div class="container">
     <div class="row">
-        <div class="product_picture col-md-7 col-sm-12">
+        <div class="product_picture zoom-box col-md-7 col-sm-12">
             <img src="@Model.First().Image"
-                 alt="" class="w-100 ">
+                 alt="" class="light-zoom w-100 ">
         </div>
         <div class="product col-md-5 col-sm-12">
             <h2 class="pt-5">@Model.First().Product.ProductName</h2>
@@ -143,13 +143,20 @@
 @section topCSS{
 
     <link href="~/Assest/css/ProductInformation.css" rel="stylesheet" />
-
+    <link href="~/Assest/css/glassstyle.css" rel="stylesheet" />
     <style type="text/css">
-
     </style>
 }
 @section endJS{
+
+    <script src="~/Assest/js/lightzoom.js"></script>
     <script type="text/javascript">
+        $(document).ready(function () {
+            $('img.light-zoom').lightzoom({
+                zoomPower: 2,    //Default
+                glassSize: 160,  //Default
+            });
+        });
 
 
     </script>

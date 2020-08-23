@@ -230,6 +230,7 @@
     <Compile Include="ViewModels\Customer\Output\CustomerReplace_OuputModel.cs" />
     <Compile Include="ViewModels\Customer\Output\GetCustomerOutput.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
+    <Content Include="Assest\css\glassstyle.css" />
     <Content Include="Assest\css\_NavbarPartial .css" />
     <Content Include="Assest\img\ColourCicle\Blush.PNG" />
     <Content Include="Assest\img\ColourCicle\Breezy-Blue.PNG" />
@@ -1347,6 +1348,7 @@
     <Content Include="Assest\js\Controller\LoginType.js" />
     <Content Include="Assest\js\Controller\Register.js" />
     <Content Include="Assest\js\jquery-3.4.1.min.js" />
+    <Content Include="Assest\js\lightzoom.js" />
     <Content Include="Assest\js\tab.js" />
     <Content Include="Assest\js\_NavbarPartial.js" />
     <Content Include="Assest\css\slick.css" />

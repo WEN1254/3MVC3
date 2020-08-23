@@ -385,3 +385,11 @@ ul.drop-down-menu li {
     font-size: 12px;
     margin: 0;
 }
+#loginBtn{
+    color:white;
+}
+#signout {
+    color: white;
+    background-color: #343a40;
+    border:none;
+}

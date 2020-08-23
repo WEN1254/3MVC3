@@ -20,13 +20,13 @@
     <div class="col-11 collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto  ml-auto col-9">
             <li class="nav-item active">
-                <a class="nav-link new" href="~/ProductList/New">New <span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-1 new" href="~/ProductList/New">New <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="~/ProductList/Bestsellers">Bestsellers<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-2" href="~/ProductList/Bestsellers">Bestsellers<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active drop-down-menu">
-                <a class="nav-link active" href="~/ProductIntroduction/Sofas">Sofas<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-3 active" href="~/ProductIntroduction/Sofas">Sofas<span class="sr-only">(current)</span></a>
                 <ul class="hidden">
                     <li>
                         @Html.ActionLink("Sofas And Sleeper", "Category", "ProductList", new { type = 1 }, new { sortOrder = ViewBag.ResetParm })
@@ -37,7 +37,7 @@
                 </ul>
             </li>
             <li class="nav-item active drop-down-menu">
-                <a class="nav-link active" href="~/ProductIntroduction/Chairs">Chairs<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-4 active" href="~/ProductIntroduction/Chairs">Chairs<span class="sr-only">(current)</span></a>
                 <ul class="hidden">
                     <li>
                         @Html.ActionLink("Lounge Chairs", "Category", "ProductList", new { type = 3 }, new { sortOrder = ViewBag.ResetParm })
@@ -54,7 +54,7 @@
                 </ul>
             </li>
             <li class="nav-item active drop-down-menu">
-                <a class="nav-link active" href="~/ProductIntroduction/Tables">Tables<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-5 active" href="~/ProductIntroduction/Tables">Tables<span class="sr-only">(current)</span></a>
                 <ul class="hidden">
                     <li>
                         @Html.ActionLink("Accent And Coffee Tables", "Category", "ProductList", new { type = 7 }, new { sortOrder = ViewBag.ResetParm })
@@ -68,7 +68,7 @@
                 </ul>
             </li>
             <li class="nav-item active drop-down-menu">
-                <a class="nav-link active" href="~/ProductIntroduction/Beds">Beds<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-6 active" href="~/ProductIntroduction/Beds">Beds<span class="sr-only">(current)</span></a>
                 <ul class="hidden">
                     <li>
                         @Html.ActionLink("Bedroom-Beds", "Category", "ProductList", new { type = 10 }, new { sortOrder = ViewBag.ResetParm })
@@ -79,7 +79,7 @@
                 </ul>
             </li>
             <li class="nav-item active drop-down-menu">
-                <a class="nav-link active" href="~/ProductIntroduction/CabinetAndDressingtable">Cabinet And Dressingtable<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-7 active" href="~/ProductIntroduction/CabinetAndDressingtable">Cabinet And Dressingtable<span class="sr-only">(current)</span></a>
                 <ul class="hidden">
                     <li>
                         @Html.ActionLink("Dressers", "Category", "ProductList", new { type = 12 }, new { sortOrder = ViewBag.ResetParm })
@@ -90,7 +90,7 @@
                 </ul>
             </li>
             <li class="nav-item active drop-down-menu">
-                <a class="nav-link active" href="~/ProductIntroduction/Accessories">Accessories<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-8 active" href="~/ProductIntroduction/Accessories">Accessories<span class="sr-only">(current)</span></a>
                 <ul class="hidden">
                     <li>
                         @Html.ActionLink("Rugs", "Category", "ProductList", new { type = 14 }, new { sortOrder = ViewBag.ResetParm })
@@ -110,18 +110,19 @@
                 @Html.ActionLink("Lighting", "Category", "ProductList", new { type = 18 }, new { @class = "nav-link" })<span class="sr-only">(current)</span>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="~/AboutUs/Index">About<span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-9" href="~/AboutUs/Index">About<span class="sr-only">(current)</span></a>
             </li>
         </ul>
+        
         <div class="nav_icon " id="UserType">
             <a id="loginBtn"><i class="fas fa-user"></i></a>
-            <a href="" class="search"><i class="fas fa-search"></i></a>
-            <button id="btn" for="check" onclick="shop()">
+            <button class=" d-none" id="signout" onclick="removeuser()"></button>
+            @*<a href="" class="search"><i class="fas fa-search"></i></a>*@
+            <button id="btn" class="shopicon" for="check" onclick="shop()">
                 <i class="fas fa-shopping-cart"></i>
             </button>
+
             <input type="checkbox" id="check">
-
-
 
             <div class="transparent">
 

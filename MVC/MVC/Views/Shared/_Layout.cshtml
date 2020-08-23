@@ -96,7 +96,6 @@
         }
 
 
-
     </script>
     <style>
         .LineBot {
@@ -148,6 +147,8 @@
             width: 50%;
             
         }
+
+
     </style>
 
 
@@ -182,6 +183,26 @@
                 LineQr.style.display = "none";
                 LineBotcount++;
             }
+        }
+        if (localStorage.getItem("LoginUser") != null) {
+            var user = localStorage.getItem("LoginUser");
+            document.getElementById("loginBtn").innerHTML = "Hello " + user + "!";
+            var signout = document.getElementById('signout');
+            signout.className = " ";
+            signout.innerHTML = "SignOut";
+      
+        } else {
+            @*var loginBtn = document.getElementById("loginBtn");
+            var usericon = document.createElement("i");
+            usericon.setAttribute("class", "fas fa-user");*@
+            @*loginBtn.innerHTML = "<i class="fas fa - user"></i>";*@
+            loginBtn.appendChild(usericon)
+            var signout = document.getElementById('signout');
+            signout.className = "d-none";
+        }
+        function removeuser() {
+            localStorage.clear();
+            window.location.reload()
         }
 
     </script>

@@ -96,23 +96,31 @@
 }
 /* ¤À¹j */
 .match {
-    border-radius:10px;
-    background-color: #000;
-    position:fixed !important;
+    /*    border-radius:10px;*/
+    background-color: #ccc;
+    position: fixed !important;
     z-index: 1;
-    top: 425px;
+    top: 77px;
     left: -240px;
     width: 240px;
-    transition:.2s;
-
-    }
+    transition: .2s;
+    height: 100%;
+}
 
     .match button {
-        margin-left: 13px;
-        border:none;
-        background:#000;
-        color:#fff;
+        margin: 20px 0 0 13px;
+        border: none;
+        background: #ccc;
+        color: #fff;
     }
+    .match button a:hover {
+        text-decoration:none;
+        color: #aaa;
+    }
+
+        .match button:first-child {
+            margin-top: 50%;
+        }
 
 input:checked ~ .match {
     left: 0px;
@@ -132,8 +140,7 @@ button {
     display: none;
 }
 
-#AddToCart{
-   background-color:black;
-   color:white;
+#AddToCart {
+    background-color: black;
+    color: white;
 }
-
